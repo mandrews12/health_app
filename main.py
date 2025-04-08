@@ -29,3 +29,7 @@ fbs = st.selectbox('Fasting Blood Sugar > 120 mg/dl (fbs)', [0, 1])
 restecg = st.selectbox('Resting ECG Results (restecg)', [0, 1, 2])
 thalach = st.slider('Max Heart Rate Achieved (thalach)', 60, 220, 150)
 exang = st.selectbox('Exercise Induced Angina (exang)', [0, 1])
+
+if st.button("Predict"):
+  st.write("Getting predictions...")
+

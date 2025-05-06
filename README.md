@@ -1,2 +1,2 @@
 # health_app
-Use classification models to predict health risks and provide actionable advice
+Uses classification models to predict if a user is at risk of heart disease.

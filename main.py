@@ -1,4 +1,6 @@
 import streamlit as st
+from proccess_data import predict
+import pandas as pd
 
 # Title Section
 st.title("Heart Disease Risk Predictor")
@@ -22,5 +24,14 @@ with st.form("risk_form"):
     # Submit Button
     submitted = st.form_submit_button("Predict")
     if submitted:
-        # Placeholder for prediction logic
-        st.write("Getting prediction...")
+        # get input values and send to model predictor
+        input_data = {age, sex, chest_pain_type, bps, cholesterol, fbs, ecg, max_hr, exerc_angina, old_peak, st_slope}
+        # Convert input data to DataFrame
+        input_df = pd.DataFrame([input_data], columns=["age","sex","chest_pain_type","bps","cholesterol","fbs","ecg","max_hr","exerc_angina","old_peak","st_slope"])
+        #Call the prediction function
+        prediction = predict(input_df)
+        # Display the prediction result
+        if prediction[0] == 1:
+            st.write("You are at risk of heart disease.")
+        else:
+            st.write("You are not at risk of heart disease.")

@@ -25,9 +25,21 @@ with st.form("risk_form"):
     submitted = st.form_submit_button("Predict")
     if submitted:
         # get input values and send to model predictor
-        input_data = {age, sex, chest_pain_type, bps, cholesterol, fbs, ecg, max_hr, exerc_angina, old_peak, st_slope}
+        input_data = {
+        "age": age,
+        "sex": 1 if sex == "Male" else 0,
+        "chest pain type": chest_pain_type,
+        "resting bp s": bps,
+        "cholesterol": cholesterol,
+        "fasting blood sugar": 1 if fbs == "Yes (1)" else 0,
+        "resting ecg": ecg,
+        "max heart rate": max_hr,
+        "exercise angina": 1 if exerc_angina == "Yes (1)" else 0,
+        "oldpeak": old_peak,
+        "ST slope": st_slope
+        }
         # Convert input data to DataFrame
-        input_df = pd.DataFrame([input_data], columns=["age","sex","chest_pain_type","bps","cholesterol","fbs","ecg","max_hr","exerc_angina","old_peak","st_slope"])
+        input_df = pd.DataFrame([input_data])
         #Call the prediction function
         prediction = predict(input_df)
         # Display the prediction result

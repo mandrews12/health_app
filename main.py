@@ -1,6 +1,4 @@
-import streamlit as st
-from proccess_data import predict
-import pandas as pd
+from utils import *
 
 # Title Section
 st.title("Heart Disease Risk Predictor")

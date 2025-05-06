@@ -1,4 +1,5 @@
-# health_app
+# Health App - Determining the risk of Heart Disease
+
 Uses classification models to predict if a user is at risk of heart disease based on their inputs.
 
 To run the app it can accessed through the following link:
@@ -18,3 +19,8 @@ pip install -r requirments
 ```
 $ streamlit run main.py
 ```
+
+Sources ued to complete the project:
+
+* https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall
+* https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html

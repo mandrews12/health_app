@@ -21,7 +21,7 @@ def classification_confint(acc, n):
 def predict (input):
 
     # Train the model
-    heart_disease = pd.read_csv("/workspaces/health_app/heart_statlog_cleveland_hungary_final.csv")
+    heart_disease = pd.read_csv("heart_statlog_cleveland_hungary_final.csv")
 
     features = heart_disease.drop('target', axis=1)
     target = heart_disease['target']
